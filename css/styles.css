@@ -1,13 +1,14 @@
 * {
     font-family: 'Roboto', sans-serif;
     color: white;
+
     scroll-behavior: smooth;
 }
 
 body {
     background-color: #222;
     min-height: 100vh;
-    margin: 0;
+    /* margin: 0; */
 }
 
 
@@ -73,51 +74,68 @@ body {
 
 
 /* Hero */
-
 .hero-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    /* margin-top: 2rem; */
+    padding: 2rem;
+    gap: 2rem;
 }
 
-/* hero image, resume image, certificate image */
-.hero-image,
-.resume-image,
-.certificate-logo,
-.project-image {
-    max-width: 100%;
+/* Image Styling */
+.hero-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 250px;
     height: auto;
-    margin: 0 auto;
-    display: block;
-}
-.circular-image {
     border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
 }
-.hero-left,
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+/* Text Styling */
 .hero-right {
-    width: 100%;
-}
-
-.title {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 400;
-}
-
-.hero-container .title {
+    max-width: 600px;
     text-align: left;
-    padding-left: 1rem;
 }
 
-.description {
-    padding: 0 1rem;
-    font-size: 1rem;
-    line-height: 2rem;
-    text-align: justify;
+.hero-right .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    
+    margin-bottom: 0.5rem;
+    
 }
+
+/* Subtitle (Roles under Name) */
+.subtitle2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Description Styling */
+.description {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    
+    text-align: justify;
+    max-width: 600px;
+}
+
+
+/* Buttons */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -128,17 +146,15 @@ body {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-}
-
-.resume-btn {
-    background-color: #007bff;
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .hire-btn {
@@ -146,14 +162,87 @@ body {
     color: white;
 }
 
+.resume-btn {
+    background-color: #007bff;
+    color: white;
+}
+
 .btn:hover {
-    opacity: 0.8;
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Connect With Me Section */
+.connect-with-me {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.connect-with-me p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .connect-with-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 
-/* Resume */
 
-.resume-container,
+
+/* hero image, resume image, certificate image */
+/* .hero-image, */
+.resume-image,
+.certificate-logo,
+.project-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+    
+    
+    /* Resume */
+    
+    .resume-container,
 .certificates-container,
 .skills-container,
 .portfolio-container,
@@ -163,6 +252,11 @@ body {
     min-height: 100vh;
 }
 
+.resume-container .title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+}
 .subtitle {
     font-size: 1.25rem;
     line-height: 1.6rem;
